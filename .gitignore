@@ -3,3 +3,4 @@ bin/
 *.exe
 *.class
 *.out
+test.cpp
