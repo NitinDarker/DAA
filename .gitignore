@@ -1,5 +1,7 @@
 .vscode/
 bin/
+.idea/
+*.iml
 *.exe
 *.class
 *.out

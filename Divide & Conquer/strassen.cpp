@@ -5,7 +5,6 @@ using namespace std;
 
 typedef vector<vector<int>> Matrix;
 
-// Helper: Get next power of 2
 int nextPowerOf2(int n) {
     int power = 1;
     while (power < n)
@@ -13,7 +12,6 @@ int nextPowerOf2(int n) {
     return power;
 }
 
-// Matrix addition
 Matrix add(const Matrix &A, const Matrix &B) {
     int n = A.size();
     Matrix C(n, vector<int>(n));
@@ -23,7 +21,6 @@ Matrix add(const Matrix &A, const Matrix &B) {
     return C;
 }
 
-// Matrix subtraction
 Matrix subtract(const Matrix &A, const Matrix &B) {
     int n = A.size();
     Matrix C(n, vector<int>(n));
@@ -33,7 +30,6 @@ Matrix subtract(const Matrix &A, const Matrix &B) {
     return C;
 }
 
-// Strassen recursive function
 Matrix strassen(const Matrix &A, const Matrix &B) {
     int n = A.size();
     Matrix C(n, vector<int>(n, 0));
@@ -95,7 +91,6 @@ Matrix strassen(const Matrix &A, const Matrix &B) {
     return C;
 }
 
-// Function to prepare matrices by padding and call strassen
 Matrix multiply(const Matrix &A, const Matrix &B, int origSize) {
     int n = A.size();
     int m = nextPowerOf2(n);
@@ -121,7 +116,6 @@ Matrix multiply(const Matrix &A, const Matrix &B, int origSize) {
     return result;
 }
 
-// Helper function to print a matrix
 void printMatrix(const Matrix &M) {
     for (auto &row : M) {
         for (int val : row)
@@ -131,7 +125,6 @@ void printMatrix(const Matrix &M) {
 }
 
 int main() {
-    // Example: 3x3 matrices (will be padded to 4x4 internally)
     Matrix A = {
         {1, 2, 3},
         {4, 5, 6},
